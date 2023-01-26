@@ -1,6 +1,6 @@
 # Communicado
 
-## Development 👨‍💻
+## Development 🧑‍💻
 
 While development, you might need a `compile_commands.json` to help with
 editor autocomplete and such. For getting the file, instead of running the usual

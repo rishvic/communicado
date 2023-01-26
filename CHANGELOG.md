@@ -9,8 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- A basic `commserver.c` file, which just prints in the `taskmain` function.
-- Libtask library, inside the vendor/ directory.
+- Added `tftpd`: a TFTP server executable.
+- Placed libtask library, inside the vendor/ directory.
 - Basic `README.md` file with basic instruction regarding compatibility, build
   instructions, etc.
 - This `CHANGELOG.md` file, noting down notable changes.
