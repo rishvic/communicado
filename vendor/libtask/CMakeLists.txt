@@ -23,5 +23,5 @@ target_include_directories(task
 )
 
 target_compile_options(task PRIVATE
-    $<$<OR:$<C_COMPILER_ID:Clang>,$<C_COMPILER_ID:AppleClang>,$<C_COMPILER_ID:GNU>>:
-    -Wall>)
+    -Wall
+    $<IF:$<C_COMPILER_ID:GNU>,-ggdb,-g>)

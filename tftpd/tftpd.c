@@ -7,6 +7,7 @@
 
 #include "args.h"
 #include "cli.h"
+#include "server.h"
 
 #define MESSAGE "Hello, TFTP!\n"
 
@@ -34,7 +35,14 @@ void taskmain(int argc, char *argv[]) {
     return;
   }
 
-  /* TODO: Start up a server instance */
-  fdnoblock(STDOUT_FILENO);
-  fdwrite(STDOUT_FILENO, MESSAGE, strlen(MESSAGE));
+  /* Start up a server instance */
+  err = StartServer(args.root, args.port, argv[0]);
+  if (err != 0) {
+    fprintf(stderr, "%s: failed while starting server\n", argv[0]);
+    taskexit(EXIT_FAILURE);
+    return;
+  }
+
+  taskexit(EXIT_SUCCESS);
+  return;
 }

@@ -1,8 +1,6 @@
 #ifndef COMMUNICADO_TFTPD_CLI_H_
 #define COMMUNICADO_TFTPD_CLI_H_
 
-#include "config.h"
-
 #define USAGE_FORMAT                                                        \
   "Usage: %s [OPTION] ...\n"                                                \
   "Run a TFTP server instance.\n"                                           \
@@ -19,8 +17,7 @@
   " %-2d if any problem (e.g., cannot access command-line argument).\n"
 
 #define VERSION_FORMAT \
-  PROJECT_STRING       \
-  "\n"                 \
+  "%s\n"               \
   "tftpd: TFTP server\n"
 
 void print_usage(const char *command);
