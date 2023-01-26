@@ -1,2 +1,5 @@
 # CMake-generated config.h
 /config.h
+
+# tftpd executable
+/tftpd

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.20)
 
 configure_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/config.h.in
@@ -34,4 +34,8 @@ target_compile_options(tftpd PRIVATE
 target_link_libraries(tftpd
     PUBLIC
         Task::task
+)
+
+install(PROGRAMS tftpd
+        TYPE SBIN
 )

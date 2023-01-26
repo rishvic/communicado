@@ -1,7 +1,9 @@
-cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.20)
 project(Communicado VERSION 0.0.1 LANGUAGES C ASM)
 
 add_subdirectory(tftpd)
 
 # Third party libraries
 add_subdirectory(vendor/libtask)
+
+include(CPack)

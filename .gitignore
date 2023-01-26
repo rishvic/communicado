@@ -154,6 +154,7 @@ CMakeFiles
 CMakeScripts
 Testing
 Makefile
+build.ninja
 cmake_install.cmake
 install_manifest.txt
 compile_commands.json
@@ -210,6 +211,10 @@ Temporary Items
 ### macOS Patch ###
 # iCloud generated files
 *.icloud
+
+### Ninja ###
+.ninja_deps
+.ninja_log
 
 ### Vim ###
 # Swap
