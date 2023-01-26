@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.1] - 2023-01-27
+
 ### Added
 
 - Added `tftpd`: a TFTP server executable.
@@ -15,4 +17,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   instructions, etc.
 - This `CHANGELOG.md` file, noting down notable changes.
 
-[Unreleased]: https://github.com/rishvic/communicado
+[unreleased]: https://github.com/rishvic/communicado/compare/v0.0.1...HEAD
+[0.0.1]: https://github.com/rishvic/communicado/releases/tag/v0.0.1
