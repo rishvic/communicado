@@ -1,8 +1,15 @@
 cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 
-configure_file(config.h.in config.h)
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/config.h.in
+    ${CMAKE_CURRENT_SOURCE_DIR}/config.h
+)
 
-add_executable(tftpd tftpd.c)
+add_executable(tftpd
+        tftpd.c
+        args.c
+        cli.c
+)
 
 target_include_directories(tftpd
     PRIVATE
