@@ -5,5 +5,3 @@ add_subdirectory(tftpd)
 
 # Third party libraries
 add_subdirectory(vendor/libtask)
-
-include(CPack)
