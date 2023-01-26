@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 
+configure_file(config.h.in config.h)
+
 add_executable(tftpd tftpd.c)
 
 target_include_directories(tftpd
