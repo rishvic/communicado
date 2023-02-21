@@ -4,7 +4,7 @@
 
 A simple server, implementing the Trivial File Transfer Protocol (TFTP), as
 desribed in RFC [1350](https://datatracker.ietf.org/doc/html/rfc1350).
-Implemented a concurrent server by using [Libtask](https://swtch.com/libtask/).
+Implemented in a concurrent manner by using [Libtask](https://swtch.com/libtask/).
 
 ## Building ⚒️
 

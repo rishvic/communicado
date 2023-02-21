@@ -1,13 +1,12 @@
 cmake_minimum_required(VERSION 3.20)
 
-add_library(tftpd STATIC
-    src/server.c
-    src/server/poll.c
+add_library(tftpack STATIC
+    src/send.c
 )
 
-add_library(Communicado::TFTPd ALIAS tftpd)
+add_library(Communicado::TFTPack ALIAS tftpack)
 
-target_include_directories(tftpd
+target_include_directories(tftpack
     PUBLIC
         $<INSTALL_INTERFACE:include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -15,12 +14,12 @@ target_include_directories(tftpd
         ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-target_compile_definitions(tftpd PRIVATE
+target_compile_definitions(tftpack PRIVATE
     _FORTIFY_SOURCE=2
     _GLIBCXX_ASSERTIONS
 )
 
-target_compile_options(tftpd PRIVATE
+target_compile_options(tftpack PRIVATE
     -fasynchronous-unwind-tables
     -fexceptions
     -fstack-clash-protection
@@ -33,14 +32,13 @@ target_compile_options(tftpd PRIVATE
     -Werror=implicit-function-declaration
 )
 
-target_link_options(tftpd PRIVATE
+target_link_options(tftpack PRIVATE
     "LINKER:-z,defs"
     "LINKER:-z,now"
     "LINKER:-z,relro"
 )
 
-target_link_libraries(tftpd
+target_link_libraries(tftpack
     PUBLIC
         Task::task
-        Communicado::TFTPack
 )

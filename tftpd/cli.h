@@ -13,8 +13,10 @@
   "The server reads/writes files, taking ROOT as its root directory.\n" \
   "\n"                                                                  \
   "Exit status:\n"                                                      \
-  " %-2d if OK,\n"                                                      \
-  " %-2d if any problem (e.g., cannot access command-line argument).\n"
+  " %3d  if exits normally (e.g., with a single SIGINT),\n"             \
+  " %3d  if any problem (e.g., cannot access directory),\n"             \
+  " %3d  if exits forcefully due to multiple SIGINTs,\n"        \
+  " %3d  if exits due to SIGTERM.\n"
 
 #define VERSION_FORMAT \
   "%s\n"               \

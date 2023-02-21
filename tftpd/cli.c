@@ -1,5 +1,6 @@
 #include "cli.h"
 
+#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -15,7 +16,7 @@
 
 void print_usage(const char *command) {
   printf(USAGE_FORMAT, command, DEFAULT_ROOT_DIR_INFO, TFTPD_STANDART_PORT,
-         EXIT_SUCCESS, EXIT_FAILURE);
+         EXIT_SUCCESS, EXIT_FAILURE, 128 + SIGINT, 128 + SIGTERM);
 }
 
 void print_version(void) { printf(VERSION_FORMAT, PROJECT_STRING); }

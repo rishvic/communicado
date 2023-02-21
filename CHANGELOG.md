@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - RHEL-recommended compiler options to vendor/libtask/CMakeLists.txt.
+- _TFTPack_, a library containing functions relating to properly writing/reading
+  TFTP packets.
 
 ### Changed
 
@@ -18,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Moved default tftpd options from args.h to config.h.in.
 - Changed `libtftpd` API to use libpcap-like `errbuf`, instead of using fprintf
   from inside the library.
+- Changed `StopServer` method from forcefully closing `sockfd`, to using
+  channels to signal stopping of server.
 
 ## [0.0.1] - 2023-01-27
 

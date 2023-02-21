@@ -5,6 +5,7 @@ add_subdirectory(tftpd)
 
 # Project's libraries
 add_subdirectory(lib/tftpd)
+add_subdirectory(lib/tftpack)
 
 # Third party libraries
 add_subdirectory(vendor/libtask)
