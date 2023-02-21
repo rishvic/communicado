@@ -1,6 +1,6 @@
 #define _XOPEN_SOURCE 500
 
-#include "server.h"
+#include "tftpd/server.h"
 
 #include <assert.h>
 #include <errno.h>

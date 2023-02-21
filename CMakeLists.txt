@@ -3,5 +3,8 @@ project(Communicado VERSION 0.0.1 LANGUAGES C ASM)
 
 add_subdirectory(tftpd)
 
+# Project's libraries
+add_subdirectory(lib/tftpd)
+
 # Third party libraries
 add_subdirectory(vendor/libtask)

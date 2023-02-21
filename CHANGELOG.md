@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- RHEL-recommended compiler options to vendor/libtask/CMakeLists.txt.
+
+### Changed
+
+- Moved tftpd business logic code from tftpd/ to lib/tftpd/. tftpd now depends
+  on the static libtftpd library.
+- Moved default tftpd options from args.h to config.h.in.
+
 ## [0.0.1] - 2023-01-27
 
 ### Added

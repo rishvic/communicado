@@ -1,8 +1,6 @@
 #ifndef COMMUNICADO_TFTPD_SERVER_H_
 #define COMMUNICADO_TFTPD_SERVER_H_
 
-#include "args.h"
-
 #define SERVER_OK 0
 #define SERVER_NOFD 1
 

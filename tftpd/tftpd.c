@@ -7,7 +7,7 @@
 
 #include "args.h"
 #include "cli.h"
-#include "server.h"
+#include "tftpd/server.h"
 
 #define MESSAGE "Hello, TFTP!\n"
 

@@ -5,13 +5,22 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#include "config.h"
+
 int GetCliArgs(int argc, char *argv[], CliArgs *args) {
   const char kOptions[] = ":hvd:p:";
   int c, err = 0;
   char *end;
 
-  args->root = DEFAULT_ROOT_DIR;
-  args->port = DEFAULT_PORT;
+#ifdef TFTPD_DEFAULT_ROOT_DIR
+  args->root = TFTPD_DEFAULT_ROOT_DIR;
+#else
+  args->root = NULL;
+#endif /* TFTPD_DEFAULT_ROOT_DIR */
+
+  /* Use the standard TFTP port by default */
+  args->port = TFTPD_STANDART_PORT;
+
   args->help = 0;
   args->version = 0;
 
@@ -48,6 +57,11 @@ int GetCliArgs(int argc, char *argv[], CliArgs *args) {
         err = -1;
         break;
     }
+  }
+
+  /* If defaults are not set, then specifying arguments is required. */
+  if (args->root == NULL) {
+    err = -1;
   }
 
   return err;
