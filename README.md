@@ -25,6 +25,16 @@ cmake --build .
 
 This will build the binary at `tftpd/tftpd`.
 
+To change the default TFTP root directory (set as `"/var/www/tftp"` by default),
+while running `cmake`, set the option `TFTPD_DEFAULT_ROOT_DIR` as follows:
+
+```shell
+# ...
+# 1. Run `cmake`, but with a custom TFTPD_DEFAULT_ROOT_DIR
+cmake -DTFTPD_DEFAULT_ROOT_DIR=/var/lib/communicado/tftpd/data .
+# ...
+```
+
 **Note:** If you want to see development-related info, then see the
 `README-hacking.md` file.
 

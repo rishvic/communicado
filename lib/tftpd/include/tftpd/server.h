@@ -7,6 +7,6 @@
 extern int tftp_sockfd;
 extern int running;
 
-int StartServer(const char *root, int port, const char *command);
+int StartServer(const char *root, int port, char *errbuf);
 
 #endif /* COMMUNICADO_TFTPD_SERVER_H_ */

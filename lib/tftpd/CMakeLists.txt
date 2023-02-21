@@ -41,4 +41,5 @@ target_link_options(tftpd PRIVATE
 target_link_libraries(tftpd
     PUBLIC
         Task::task
+        Communicado::TFTPack
 )

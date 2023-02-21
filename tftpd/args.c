@@ -61,6 +61,8 @@ int GetCliArgs(int argc, char *argv[], CliArgs *args) {
 
   /* If defaults are not set, then specifying arguments is required. */
   if (args->root == NULL) {
+    fprintf(stderr, "%s: option '-d' not specified, but is necessary\n",
+            argv[0]);
     err = -1;
   }
 

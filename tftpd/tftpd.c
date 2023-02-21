@@ -5,14 +5,17 @@
 #include <stdlib.h>
 #include <task/task.h>
 
+#include "tftpd/err.h"
+#include "tftpd/server.h"
+
 #include "args.h"
 #include "cli.h"
-#include "tftpd/server.h"
 
 #define MESSAGE "Hello, TFTP!\n"
 
 void taskmain(int argc, char *argv[]) {
   int err;
+  char errbuf[TFTPD_ERRBUF_SIZE];
   CliArgs args;
 
   /* Command line argument processing */
@@ -36,9 +39,9 @@ void taskmain(int argc, char *argv[]) {
   }
 
   /* Start up a server instance */
-  err = StartServer(args.root, args.port, argv[0]);
+  err = StartServer(args.root, args.port, errbuf);
   if (err != 0) {
-    fprintf(stderr, "%s: failed while starting server\n", argv[0]);
+    fprintf(stderr, "%s: failed to run server: %s\n", argv[0], errbuf);
     taskexit(EXIT_FAILURE);
     return;
   }
