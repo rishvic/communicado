@@ -83,7 +83,10 @@ void ServerTask(void *args) {
     }
 
     /* Break loop if fd is closed or invalid. */
-    if (fds[0].revents & (POLLHUP | POLLERR | POLLNVAL)) break;
+    if (fds[0].revents & (POLLHUP | POLLERR | POLLNVAL)) {
+      running = 0;
+      break;
+    }
   }
 
 server_cleanup:

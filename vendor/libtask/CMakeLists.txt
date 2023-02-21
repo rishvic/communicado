@@ -22,6 +22,26 @@ target_include_directories(task
         ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
+target_compile_definitions(task PRIVATE
+    _FORTIFY_SOURCE=2
+    _GLIBCXX_ASSERTIONS
+)
+
 target_compile_options(task PRIVATE
+    -fasynchronous-unwind-tables
+    -fexceptions
+    -fstack-clash-protection
+    -fstack-protector-strong
+    -g -grecord-gcc-switches -ggdb
+    -fcf-protection
+    -O2 -pipe
     -Wall
-    $<IF:$<C_COMPILER_ID:GNU>,-ggdb,-g>)
+    -Werror=format-security
+    -Werror=implicit-function-declaration
+)
+
+target_link_options(task PRIVATE
+    "LINKER:-z,defs"
+    "LINKER:-z,now"
+    "LINKER:-z,relro"
+)
