@@ -1,17 +1,12 @@
 cmake_minimum_required(VERSION 3.20)
 
 # tftpd defaults
-if(NOT DEFINED TFTPD_DEFAULT_ROOT_DIR)
-    set(TFTPD_DEFAULT_ROOT_DIR /var/www/tftp)
-endif()
+set(TFTPD_DEFAULT_ROOT_DIR /srv/tftp CACHE PATH "Default root directory for tftpd")
 
 configure_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/config.h.in
     ${CMAKE_CURRENT_SOURCE_DIR}/config.h
 )
-
-# Remove TFTPD variables from cache
-unset(TFTPD_DEFAULT_ROOT_DIR CACHE)
 
 add_executable(tftpd-bin
         tftpd.c
